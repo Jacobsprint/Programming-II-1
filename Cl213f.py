@@ -4,7 +4,18 @@ class Cl213f:
     self.cost = 0.0
 
   def calc(self):
-    pass
+    self.cost = 0
+    with open("data/prog213f.dat", 'r') as f:
+      for line in f:
+        kwh = int(line.strip())
+        if kwh > 2000:
+          self.cost += .07 * 2000
+          kwh = kwh - 2000
+          if kwh > 8000:
+            self.cost += .05 * 8000
+            kwh = kwh - 8000
+            if kwh > 0:
+              self.cost += kwh * .04
 
   def __str__(self):
-    return f"The Cost of {self.kwh} is "
+    return f"The Cost of {self.kwh} is ${str(self.cost)} "
