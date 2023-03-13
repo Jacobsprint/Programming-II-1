@@ -8,13 +8,11 @@ class Cl213f:
     with open("data/prog213f.dat", 'r') as f:
       for line in f:
         kwh = int(line.strip())
-        if kwh > 2000:
-          self.cost += .07 * 2000
-          kwh = kwh - 2000
-          if kwh > 8000:
-            self.cost += .05 * 8000
-            kwh = kwh - 8000
-            if kwh > 0:
+        if kwh < 2000:
+          self.cost += .07 * kwh
+        if kwh > 2000 and kwh < 8000:
+          self.cost += .05 * 8000
+        if kwh > 8000:
               self.cost += kwh * .04
 
   def __str__(self):
