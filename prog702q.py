@@ -42,7 +42,6 @@ def main():
 
       print("Average Student GPA:", round(tot/cnt, 2))
       print("Total number of Vehicles:", totstus)
-      print("Smallest favorite admin word:", sm)
       print("Longest Home Destination Name :", large)
 
   except Exception as e:
