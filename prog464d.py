@@ -27,8 +27,10 @@ def main():
       rnd1 = random.randint(-50, 99)
       row1.append(rnd1)
     mat1.append(row1)
+  print("Original Matrix:")
   printMatrix(mat1)
   print("\n")
+  print("Transposed:")
   mat2 = transpose(mat1) 
   printMatrix(mat2)
   
